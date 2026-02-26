@@ -3,23 +3,19 @@ channels = [
     "https://prefix.dev/pixi-build-backends",
     "https://prefix.dev/conda-forge",
 ]
-platforms = ["linux-64"]
+platforms = ["linux-64", "osx-arm64"]
 preview = ["pixi-build"]
-license = "CECILL-C"
+license = "MIT"
 
-# dependencies of the "default" feature: add the package, it will pull in its run-time dependencies!
 [dependencies]
 example = { path = "." }
 
 [package]
-name = "example" # NAME_PLACEHOLDER <--- do not remove this comment! It is used to update version with branch name in CI!
-version = "0.1.0" # VERSION_PLACEHOLDER <--- do not remove this comment! It is used to update version with branch name in CI!
-authors = [
-    "Vincent Pollet <vincent.pollet@lapp.in2p3.fr>",
-]
+name = "example"
+version = "0.1.0"
 
 [package.build]
-backend = { name = "pixi-build-cmake", version = "0.3.9" }
+backend = { name = "pixi-build-cmake", version = "0.3.9.*" }
 
 
 [package.build-dependencies]
